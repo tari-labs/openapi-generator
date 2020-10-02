@@ -1552,7 +1552,7 @@ public class DefaultCodegen implements CodegenConfig {
         specialCharReplacements.put("@", "At");
         specialCharReplacements.put("!", "Exclamation");
         specialCharReplacements.put("+", "Plus");
-        specialCharReplacements.put(":", "Colon");
+        specialCharReplacements.put(":", "");
         specialCharReplacements.put(">", "Greater_Than");
         specialCharReplacements.put("<", "Less_Than");
         specialCharReplacements.put(".", "Period");

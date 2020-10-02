@@ -753,6 +753,7 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     }
 
     private String titleCase(final String input) {
+        if (StringUtils.isEmpty(input)) { return input; }
         return input.substring(0, 1).toUpperCase(Locale.ROOT) + input.substring(1);
     }
 
