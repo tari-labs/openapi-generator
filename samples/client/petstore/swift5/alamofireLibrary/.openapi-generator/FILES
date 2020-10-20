@@ -11,6 +11,9 @@ PetstoreClient/Classes/OpenAPIs/APIs/PetAPI.swift
 PetstoreClient/Classes/OpenAPIs/APIs/StoreAPI.swift
 PetstoreClient/Classes/OpenAPIs/APIs/UserAPI.swift
 PetstoreClient/Classes/OpenAPIs/AlamofireImplementations.swift
+PetstoreClient/Classes/OpenAPIs/YatAuthenticator.swift
+PetstoreClient/Classes/OpenAPIs/YatCredentials.swift
+PetstoreClient/Classes/OpenAPIs/AlamofireObjectMapper.swift
 PetstoreClient/Classes/OpenAPIs/CodableHelper.swift
 PetstoreClient/Classes/OpenAPIs/Configuration.swift
 PetstoreClient/Classes/OpenAPIs/Extensions.swift
