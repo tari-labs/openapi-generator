@@ -75,7 +75,7 @@ public class Swift5ClientCodegen extends DefaultCodegen implements CodegenConfig
     protected boolean readonlyProperties = false;
     protected boolean swiftUseApiNamespace;
     protected String[] responseAs = new String[0];
-    protected String sourceFolder = "Classes" + File.separator + "OpenAPIs";
+    protected String sourceFolder = "Sources";
     protected HashSet objcReservedWords;
     protected String apiDocPath = "docs/";
     protected String modelDocPath = "docs/";
@@ -128,7 +128,6 @@ public class Swift5ClientCodegen extends DefaultCodegen implements CodegenConfig
                         "Array",
                         "Dictionary",
                         "Set",
-                        "Any",
                         "Empty",
                         "AnyObject",
                         "Any",
@@ -212,7 +211,7 @@ public class Swift5ClientCodegen extends DefaultCodegen implements CodegenConfig
         typeMapping.put("float", "Float");
         typeMapping.put("number", "Double");
         typeMapping.put("double", "Double");
-        typeMapping.put("object", "Any");
+        typeMapping.put("object", "Data");
         typeMapping.put("file", "URL");
         typeMapping.put("binary", "URL");
         typeMapping.put("ByteArray", "Data");
@@ -357,7 +356,6 @@ public class Swift5ClientCodegen extends DefaultCodegen implements CodegenConfig
         } else {
             additionalProperties.put(PROJECT_NAME, projectName);
         }
-        sourceFolder = projectName + File.separator + sourceFolder;
 
         // Setup nonPublicApi option, which generates code with reduced access
         // modifiers; allows embedding elsewhere without exposing non-public API calls
@@ -482,6 +480,15 @@ public class Swift5ClientCodegen extends DefaultCodegen implements CodegenConfig
                 supportingFiles.add(new SupportingFile("AlamofireImplementations.mustache",
                         sourceFolder,
                         "AlamofireImplementations.swift"));
+                supportingFiles.add(new SupportingFile("AlamofireObjectMapper.mustache",
+                        sourceFolder,
+                "AlamofireObjectMapper.swift"));
+                supportingFiles.add(new SupportingFile("YatAuthenticator.mustache",
+                        sourceFolder,
+                "YatAuthenticator.swift"));
+                supportingFiles.add(new SupportingFile("YatCredentials.mustache",
+                        sourceFolder,
+                "YatCredentials.swift"));
                 break;
             case LIBRARY_URLSESSION:
                 additionalProperties.put("useURLSession", true);
